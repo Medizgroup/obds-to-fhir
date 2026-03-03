@@ -19,9 +19,9 @@ services:
     depends_on:
       kafka:
         condition: service_started
-    env_file:
-      - path: .obds-to-fhir.env
-        required: false
+ #   env_file:
+  #    - path: .obds-to-fhir.env
+   #     required: false
 
   kafka:
     image: docker.io/apache/kafka:4.1.1@sha256:0bc1bb2478f45b6cea78864df86acdc11e8df2c5172477819a4d12942cbe5d40

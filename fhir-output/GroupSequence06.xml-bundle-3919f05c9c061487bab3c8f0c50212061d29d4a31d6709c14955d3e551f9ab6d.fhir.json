@@ -1,0 +1,186 @@
+{
+  "resourceType": "Bundle",
+  "id": "3919f05c9c061487bab3c8f0c50212061d29d4a31d6709c14955d3e551f9ab6d",
+  "type": "transaction",
+  "entry": [ {
+    "fullUrl": "Patient/3919f05c9c061487bab3c8f0c50212061d29d4a31d6709c14955d3e551f9ab6d",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "3919f05c9c061487bab3c8f0c50212061d29d4a31d6709c14955d3e551f9ab6d",
+      "meta": {
+        "profile": [ "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2025.0.1" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MR",
+            "display": "Medical record number"
+          }, {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+            "code": "PSEUDED",
+            "display": "pseudonymized"
+          } ]
+        },
+        "system": "https://bzkf.github.io/obds-to-fhir/identifiers/patient-id",
+        "value": "9876543"
+      } ],
+      "gender": "female",
+      "birthDate": "1960-01-16",
+      "address": [ {
+        "type": "both",
+        "postalCode": "12345",
+        "country": "DE"
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Patient/3919f05c9c061487bab3c8f0c50212061d29d4a31d6709c14955d3e551f9ab6d"
+    }
+  }, {
+    "fullUrl": "Condition/c2935c32db1b60a23befcb37fa4d1dd87ba73b03622a88f40adcae741e3ae4e5",
+    "resource": {
+      "resourceType": "Condition",
+      "id": "c2935c32db1b60a23befcb37fa4d1dd87ba73b03622a88f40adcae741e3ae4e5",
+      "meta": {
+        "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-diagnose-primaertumor|2026.0.0" ],
+        "tag": [ {
+          "system": "http://snomed.info/sct",
+          "version": "http://snomed.info/sct/900000000000207008/version/20250501",
+          "code": "255599008",
+          "display": "Incomplete (qualifier value)"
+        } ]
+      },
+      "extension": [ {
+        "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-histology-morphology-behavior-icdo3",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/icd-o-3",
+            "version": "33",
+            "code": "8720/3"
+          } ]
+        }
+      }, {
+        "url": "http://hl7.org/fhir/StructureDefinition/condition-assertedDate",
+        "valueDateTime": "2023-10-11"
+      } ],
+      "identifier": [ {
+        "system": "https://bzkf.github.io/obds-to-fhir/identifiers/primaerdiagnose-condition-id",
+        "value": "9876543-1"
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+          "version": "2023",
+          "code": "C43.5"
+        } ]
+      },
+      "bodySite": [ {
+        "coding": [ {
+          "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-seitenlokalisation",
+          "code": "T"
+        }, {
+          "system": "http://snomed.info/sct",
+          "version": "http://snomed.info/sct/900000000000207008/version/20250501",
+          "code": "385432009",
+          "display": "Not applicable (qualifier value)"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/3919f05c9c061487bab3c8f0c50212061d29d4a31d6709c14955d3e551f9ab6d",
+        "identifier": {
+          "type": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "MR",
+              "display": "Medical record number"
+            } ]
+          },
+          "system": "https://bzkf.github.io/obds-to-fhir/identifiers/patient-id",
+          "value": "9876543"
+        }
+      },
+      "recordedDate": "2024-11-30"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Condition/c2935c32db1b60a23befcb37fa4d1dd87ba73b03622a88f40adcae741e3ae4e5"
+    }
+  }, {
+    "fullUrl": "CarePlan/615791556657ef99a159d1e56e38b9d9a6c001ee1923b3ea82b7550da96ff536",
+    "resource": {
+      "resourceType": "CarePlan",
+      "id": "615791556657ef99a159d1e56e38b9d9a6c001ee1923b3ea82b7550da96ff536",
+      "meta": {
+        "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-tumorkonferenz|2026.0.0" ]
+      },
+      "identifier": [ {
+        "system": "https://bzkf.github.io/obds-to-fhir/identifiers/tumorkonferenz-care-plan-id",
+        "value": "Tumorkonferenz-1237774"
+      } ],
+      "status": "completed",
+      "intent": "plan",
+      "category": [ {
+        "coding": [ {
+          "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapieplanung-typ",
+          "code": "postop"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/3919f05c9c061487bab3c8f0c50212061d29d4a31d6709c14955d3e551f9ab6d",
+        "identifier": {
+          "type": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "MR",
+              "display": "Medical record number"
+            } ]
+          },
+          "system": "https://bzkf.github.io/obds-to-fhir/identifiers/patient-id",
+          "value": "9876543"
+        }
+      },
+      "created": "2024-01-26",
+      "addresses": [ {
+        "reference": "Condition/c2935c32db1b60a23befcb37fa4d1dd87ba73b03622a88f40adcae741e3ae4e5"
+      } ],
+      "activity": [ {
+        "detail": {
+          "code": {
+            "coding": [ {
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+              "code": "CH"
+            } ]
+          },
+          "status": "completed",
+          "statusReason": {
+            "coding": [ {
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapieabweichung",
+              "code": "N"
+            } ]
+          }
+        }
+      }, {
+        "detail": {
+          "code": {
+            "coding": [ {
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-typ",
+              "code": "OP"
+            } ]
+          },
+          "status": "completed",
+          "statusReason": {
+            "coding": [ {
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapieabweichung",
+              "code": "N"
+            } ]
+          }
+        }
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "CarePlan/615791556657ef99a159d1e56e38b9d9a6c001ee1923b3ea82b7550da96ff536"
+    }
+  } ]
+}

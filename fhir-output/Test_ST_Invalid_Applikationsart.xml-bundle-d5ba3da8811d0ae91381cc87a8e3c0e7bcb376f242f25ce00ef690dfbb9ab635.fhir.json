@@ -1,0 +1,329 @@
+{
+  "resourceType": "Bundle",
+  "id": "d5ba3da8811d0ae91381cc87a8e3c0e7bcb376f242f25ce00ef690dfbb9ab635",
+  "type": "transaction",
+  "entry": [ {
+    "fullUrl": "Patient/d5ba3da8811d0ae91381cc87a8e3c0e7bcb376f242f25ce00ef690dfbb9ab635",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "d5ba3da8811d0ae91381cc87a8e3c0e7bcb376f242f25ce00ef690dfbb9ab635",
+      "meta": {
+        "profile": [ "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2025.0.1" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MR",
+            "display": "Medical record number"
+          }, {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+            "code": "PSEUDED",
+            "display": "pseudonymized"
+          } ]
+        },
+        "system": "https://bzkf.github.io/obds-to-fhir/identifiers/patient-id",
+        "value": "p0"
+      } ],
+      "gender": "female",
+      "birthDate": "2000-01-01",
+      "address": [ {
+        "type": "both",
+        "postalCode": "00",
+        "country": "DE"
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Patient/d5ba3da8811d0ae91381cc87a8e3c0e7bcb376f242f25ce00ef690dfbb9ab635"
+    }
+  }, {
+    "fullUrl": "Condition/147fd9b14bd585022608662c06150c5e7f38153527e184bcaf025121bb68d5ff",
+    "resource": {
+      "resourceType": "Condition",
+      "id": "147fd9b14bd585022608662c06150c5e7f38153527e184bcaf025121bb68d5ff",
+      "meta": {
+        "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-diagnose-primaertumor|2026.0.0" ],
+        "tag": [ {
+          "system": "http://snomed.info/sct",
+          "version": "http://snomed.info/sct/900000000000207008/version/20250501",
+          "code": "255599008",
+          "display": "Incomplete (qualifier value)"
+        } ]
+      },
+      "extension": [ {
+        "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-histology-morphology-behavior-icdo3",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/icd-o-3",
+            "version": "31",
+            "code": "9440/3"
+          } ]
+        }
+      }, {
+        "url": "http://hl7.org/fhir/StructureDefinition/condition-assertedDate",
+        "valueDateTime": "2025-01-01"
+      } ],
+      "identifier": [ {
+        "system": "https://bzkf.github.io/obds-to-fhir/identifiers/primaerdiagnose-condition-id",
+        "value": "p0-1"
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+          "version": "2010",
+          "code": "C71.9"
+        } ]
+      },
+      "bodySite": [ {
+        "coding": [ {
+          "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-seitenlokalisation",
+          "code": "L"
+        }, {
+          "system": "http://snomed.info/sct",
+          "version": "http://snomed.info/sct/900000000000207008/version/20250501",
+          "code": "7771000",
+          "display": "Left (qualifier value)"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/d5ba3da8811d0ae91381cc87a8e3c0e7bcb376f242f25ce00ef690dfbb9ab635",
+        "identifier": {
+          "type": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "MR",
+              "display": "Medical record number"
+            } ]
+          },
+          "system": "https://bzkf.github.io/obds-to-fhir/identifiers/patient-id",
+          "value": "p0"
+        }
+      },
+      "_recordedDate": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unknown"
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Condition/147fd9b14bd585022608662c06150c5e7f38153527e184bcaf025121bb68d5ff"
+    }
+  }, {
+    "fullUrl": "Procedure/d475f728214c373c6fba8a98d58da1d6493ba78a3b2890c42067a147529be9e1",
+    "resource": {
+      "resourceType": "Procedure",
+      "id": "d475f728214c373c6fba8a98d58da1d6493ba78a3b2890c42067a147529be9e1",
+      "meta": {
+        "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-strahlentherapie|2026.0.0" ]
+      },
+      "extension": [ {
+        "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-strahlentherapie-intention",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-intention",
+            "code": "K"
+          } ]
+        }
+      }, {
+        "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-strahlentherapie-stellungzurop",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-stellungzurop",
+            "code": "O"
+          } ]
+        }
+      } ],
+      "identifier": [ {
+        "system": "https://bzkf.github.io/obds-to-fhir/identifiers/strahlentherapie-procedure-id",
+        "value": "1"
+      } ],
+      "status": "completed",
+      "category": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "http://snomed.info/sct/900000000000207008/version/20250501",
+          "code": "1287742003",
+          "display": "Radiotherapy (procedure)"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/bfarm/ops",
+          "version": "2025",
+          "code": "8-52",
+          "display": "Strahlentherapie"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/d5ba3da8811d0ae91381cc87a8e3c0e7bcb376f242f25ce00ef690dfbb9ab635",
+        "identifier": {
+          "type": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "MR",
+              "display": "Medical record number"
+            } ]
+          },
+          "system": "https://bzkf.github.io/obds-to-fhir/identifiers/patient-id",
+          "value": "p0"
+        }
+      },
+      "performedPeriod": {
+        "_start": {
+          "extension": [ {
+            "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+            "valueCode": "unknown"
+          } ]
+        }
+      },
+      "reasonReference": [ {
+        "reference": "Condition/147fd9b14bd585022608662c06150c5e7f38153527e184bcaf025121bb68d5ff"
+      } ],
+      "outcome": {
+        "coding": [ {
+          "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-therapie-ende-grund",
+          "code": "E"
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Procedure/d475f728214c373c6fba8a98d58da1d6493ba78a3b2890c42067a147529be9e1"
+    }
+  }, {
+    "fullUrl": "Procedure/363834babeb8f9621455b7cd4ec07e932ee764eae671e6178ea652f36c01d117",
+    "resource": {
+      "resourceType": "Procedure",
+      "id": "363834babeb8f9621455b7cd4ec07e932ee764eae671e6178ea652f36c01d117",
+      "meta": {
+        "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-strahlentherapie-bestrahlung-strahlentherapie|2026.0.0" ]
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/StructureDefinition/procedure-method",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-strahlentherapie-applikationsart",
+            "code": "I"
+          } ]
+        }
+      } ],
+      "identifier": [ {
+        "system": "https://bzkf.github.io/obds-to-fhir/identifiers/strahlentherapie-bestrahlung-procedure-id",
+        "value": "1-0"
+      } ],
+      "partOf": [ {
+        "reference": "Procedure/d475f728214c373c6fba8a98d58da1d6493ba78a3b2890c42067a147529be9e1"
+      } ],
+      "status": "in-progress",
+      "category": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "http://snomed.info/sct/900000000000207008/version/20250501",
+          "code": "1287742003",
+          "display": "Radiotherapy (procedure)"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/bfarm/ops",
+          "version": "2025",
+          "code": "8-52",
+          "display": "Strahlentherapie"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/d5ba3da8811d0ae91381cc87a8e3c0e7bcb376f242f25ce00ef690dfbb9ab635",
+        "identifier": {
+          "type": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "MR",
+              "display": "Medical record number"
+            } ]
+          },
+          "system": "https://bzkf.github.io/obds-to-fhir/identifiers/patient-id",
+          "value": "p0"
+        }
+      },
+      "performedPeriod": {
+        "_start": {
+          "extension": [ {
+            "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+            "valueCode": "unknown"
+          } ]
+        }
+      },
+      "bodySite": [ {
+        "extension": [ {
+          "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-strahlentherapie-bestrahlung-seitenlokalisation",
+          "valueCodeableConcept": {
+            "coding": [ {
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-seitenlokalisation",
+              "code": "U"
+            } ]
+          }
+        } ],
+        "coding": [ {
+          "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-strahlentherapie-zielgebiet",
+          "code": "1.2."
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Procedure/363834babeb8f9621455b7cd4ec07e932ee764eae671e6178ea652f36c01d117"
+    }
+  }, {
+    "fullUrl": "AdverseEvent/9fae986a3b96bac22a16537771ea639486d83627d306aed34ac0a91748f4c011",
+    "resource": {
+      "resourceType": "AdverseEvent",
+      "id": "9fae986a3b96bac22a16537771ea639486d83627d306aed34ac0a91748f4c011",
+      "meta": {
+        "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-nebenwirkung-adverse-event|2026.0.0" ]
+      },
+      "identifier": {
+        "system": "https://bzkf.github.io/obds-to-fhir/identifiers/nebenwirkung-adverse-event-id",
+        "value": "mii-pr-onko-nebenwirkung-1-Grad-maximal-2-unbekannt"
+      },
+      "actuality": "actual",
+      "event": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "not-applicable"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/d5ba3da8811d0ae91381cc87a8e3c0e7bcb376f242f25ce00ef690dfbb9ab635",
+        "identifier": {
+          "type": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "MR",
+              "display": "Medical record number"
+            } ]
+          },
+          "system": "https://bzkf.github.io/obds-to-fhir/identifiers/patient-id",
+          "value": "p0"
+        }
+      },
+      "seriousness": {
+        "coding": [ {
+          "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-nebenwirkung-ctcae-grad",
+          "code": "U"
+        } ]
+      },
+      "suspectEntity": [ {
+        "instance": {
+          "reference": "Procedure/d475f728214c373c6fba8a98d58da1d6493ba78a3b2890c42067a147529be9e1"
+        }
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "AdverseEvent/9fae986a3b96bac22a16537771ea639486d83627d306aed34ac0a91748f4c011"
+    }
+  } ]
+}

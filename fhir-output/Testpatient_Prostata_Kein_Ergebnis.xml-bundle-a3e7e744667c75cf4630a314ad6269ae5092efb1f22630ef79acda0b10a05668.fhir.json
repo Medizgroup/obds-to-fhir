@@ -1,0 +1,428 @@
+{
+  "resourceType": "Bundle",
+  "id": "a3e7e744667c75cf4630a314ad6269ae5092efb1f22630ef79acda0b10a05668",
+  "type": "transaction",
+  "entry": [ {
+    "fullUrl": "Patient/a3e7e744667c75cf4630a314ad6269ae5092efb1f22630ef79acda0b10a05668",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "a3e7e744667c75cf4630a314ad6269ae5092efb1f22630ef79acda0b10a05668",
+      "meta": {
+        "profile": [ "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert|2025.0.1" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MR",
+            "display": "Medical record number"
+          }, {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+            "code": "PSEUDED",
+            "display": "pseudonymized"
+          } ]
+        },
+        "system": "https://bzkf.github.io/obds-to-fhir/identifiers/patient-id",
+        "value": "80-kein-ergebnis"
+      } ],
+      "gender": "male",
+      "birthDate": "1952-03-05",
+      "address": [ {
+        "type": "both",
+        "postalCode": "90402",
+        "_country": {
+          "extension": [ {
+            "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+            "valueCode": "unknown"
+          } ]
+        }
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Patient/a3e7e744667c75cf4630a314ad6269ae5092efb1f22630ef79acda0b10a05668"
+    }
+  }, {
+    "fullUrl": "Condition/f7e9ea3308d10280fd3d9ce1d3c573dae4f4348b15765237ee3bda760daa3fae",
+    "resource": {
+      "resourceType": "Condition",
+      "id": "f7e9ea3308d10280fd3d9ce1d3c573dae4f4348b15765237ee3bda760daa3fae",
+      "meta": {
+        "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-diagnose-primaertumor|2026.0.0" ],
+        "tag": [ {
+          "system": "http://snomed.info/sct",
+          "version": "http://snomed.info/sct/900000000000207008/version/20250501",
+          "code": "255599008",
+          "display": "Incomplete (qualifier value)"
+        } ]
+      },
+      "extension": [ {
+        "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-histology-morphology-behavior-icdo3",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/icd-o-3",
+            "version": "31",
+            "code": "8140/3"
+          } ]
+        }
+      }, {
+        "url": "http://hl7.org/fhir/StructureDefinition/condition-assertedDate",
+        "valueDateTime": "2020-05-10"
+      } ],
+      "identifier": [ {
+        "system": "https://bzkf.github.io/obds-to-fhir/identifiers/primaerdiagnose-condition-id",
+        "value": "80-kein-ergebnis-801"
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+          "version": "2020",
+          "code": "C61"
+        } ]
+      },
+      "bodySite": [ {
+        "coding": [ {
+          "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-seitenlokalisation",
+          "code": "T"
+        }, {
+          "system": "http://snomed.info/sct",
+          "version": "http://snomed.info/sct/900000000000207008/version/20250501",
+          "code": "385432009",
+          "display": "Not applicable (qualifier value)"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/a3e7e744667c75cf4630a314ad6269ae5092efb1f22630ef79acda0b10a05668",
+        "identifier": {
+          "type": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "MR",
+              "display": "Medical record number"
+            } ]
+          },
+          "system": "https://bzkf.github.io/obds-to-fhir/identifiers/patient-id",
+          "value": "80-kein-ergebnis"
+        }
+      },
+      "recordedDate": "2024-02-16"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Condition/f7e9ea3308d10280fd3d9ce1d3c573dae4f4348b15765237ee3bda760daa3fae"
+    }
+  }, {
+    "fullUrl": "Procedure/4226087905f6057b9b71e30b1c5035fbb7a3dc43aab842605f2616611f690e3d",
+    "resource": {
+      "resourceType": "Procedure",
+      "id": "4226087905f6057b9b71e30b1c5035fbb7a3dc43aab842605f2616611f690e3d",
+      "meta": {
+        "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-operation|2026.0.0" ]
+      },
+      "extension": [ {
+        "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-operation-intention",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-intention",
+            "code": "K"
+          } ]
+        }
+      } ],
+      "identifier": [ {
+        "system": "https://bzkf.github.io/obds-to-fhir/identifiers/operation-procedure-id",
+        "value": "147-5-604-12"
+      } ],
+      "status": "completed",
+      "category": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "http://snomed.info/sct/900000000000207008/version/20250501",
+          "code": "387713003",
+          "display": "Surgical procedure"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://fhir.de/CodeSystem/bfarm/ops",
+          "version": "2022",
+          "code": "5-604.12"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a3e7e744667c75cf4630a314ad6269ae5092efb1f22630ef79acda0b10a05668",
+        "identifier": {
+          "type": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "MR",
+              "display": "Medical record number"
+            } ]
+          },
+          "system": "https://bzkf.github.io/obds-to-fhir/identifiers/patient-id",
+          "value": "80-kein-ergebnis"
+        }
+      },
+      "performedDateTime": "2020-06-01",
+      "reasonReference": [ {
+        "reference": "Condition/f7e9ea3308d10280fd3d9ce1d3c573dae4f4348b15765237ee3bda760daa3fae"
+      } ],
+      "outcome": {
+        "coding": [ {
+          "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-residualstatus",
+          "code": "R0"
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Procedure/4226087905f6057b9b71e30b1c5035fbb7a3dc43aab842605f2616611f690e3d"
+    }
+  }, {
+    "fullUrl": "Observation/a042c87268385397f8c5fcb146773ffdaebb26e5accbb5a16823e0c78be0c63f",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "a042c87268385397f8c5fcb146773ffdaebb26e5accbb5a16823e0c78be0c63f",
+      "meta": {
+        "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-residualstatus|2026.0.0" ]
+      },
+      "identifier": [ {
+        "system": "https://bzkf.github.io/obds-to-fhir/identifiers/residualstatus-observation-id",
+        "value": "147"
+      } ],
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "version": "2.80",
+          "code": "84892-9",
+          "display": "Residual tumor classification [Type] in Cancer specimen"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a3e7e744667c75cf4630a314ad6269ae5092efb1f22630ef79acda0b10a05668",
+        "identifier": {
+          "type": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "MR",
+              "display": "Medical record number"
+            } ]
+          },
+          "system": "https://bzkf.github.io/obds-to-fhir/identifiers/patient-id",
+          "value": "80-kein-ergebnis"
+        }
+      },
+      "focus": [ {
+        "reference": "Condition/f7e9ea3308d10280fd3d9ce1d3c573dae4f4348b15765237ee3bda760daa3fae"
+      } ],
+      "effectiveDateTime": "2020-06-01",
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/CodeSystem/mii-cs-onko-residualstatus",
+          "code": "R0"
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Observation/a042c87268385397f8c5fcb146773ffdaebb26e5accbb5a16823e0c78be0c63f"
+    }
+  }, {
+    "fullUrl": "Observation/29b02cb04f540d0c482df61dd5e1fe1d310bfab4d982f043ed77713f8b953146",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "29b02cb04f540d0c482df61dd5e1fe1d310bfab4d982f043ed77713f8b953146",
+      "meta": {
+        "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-prostate-gleason-grade-group|2026.0.0" ]
+      },
+      "identifier": [ {
+        "system": "https://bzkf.github.io/obds-to-fhir/identifiers/prostata-gleason-patterns-observation-id",
+        "value": "OP_80105-modul-prostata-gleason-grade-group"
+      } ],
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "http://snomed.info/sct/900000000000207008/version/20250501",
+          "code": "1812491000004107",
+          "display": "Histologic grade of primary malignant neoplasm of prostate by International Society of Urological Pathology technique (observable entity)"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a3e7e744667c75cf4630a314ad6269ae5092efb1f22630ef79acda0b10a05668",
+        "identifier": {
+          "type": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "MR",
+              "display": "Medical record number"
+            } ]
+          },
+          "system": "https://bzkf.github.io/obds-to-fhir/identifiers/patient-id",
+          "value": "80-kein-ergebnis"
+        }
+      },
+      "focus": [ {
+        "reference": "Condition/f7e9ea3308d10280fd3d9ce1d3c573dae4f4348b15765237ee3bda760daa3fae"
+      } ],
+      "effectiveDateTime": "2020-06-01",
+      "valueCodeableConcept": {
+        "coding": [ {
+          "extension": [ {
+            "url": "http://hl7.org/fhir/StructureDefinition/ordinalValue",
+            "valueDecimal": 7
+          } ],
+          "system": "http://snomed.info/sct",
+          "version": "http://snomed.info/sct/900000000000207008/version/20250501",
+          "code": "1279714001"
+        } ],
+        "text": "3+4"
+      },
+      "method": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "http://snomed.info/sct/900000000000207008/version/20250501",
+          "code": "65801008",
+          "display": "Excision (procedure)"
+        } ]
+      },
+      "derivedFrom": [ {
+        "reference": "Observation/aec5a3befd14187d50df28c3531d620f87435b4add98923a4850e5d4db4feeb4"
+      }, {
+        "reference": "Observation/29879cb58ad631b654efb760c935f4ea4a4016043ce8295fedef192a24a40f76"
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Observation/29b02cb04f540d0c482df61dd5e1fe1d310bfab4d982f043ed77713f8b953146"
+    }
+  }, {
+    "fullUrl": "Observation/aec5a3befd14187d50df28c3531d620f87435b4add98923a4850e5d4db4feeb4",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "aec5a3befd14187d50df28c3531d620f87435b4add98923a4850e5d4db4feeb4",
+      "meta": {
+        "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-prostate-gleason-patterns|2026.0.0" ]
+      },
+      "identifier": [ {
+        "system": "https://bzkf.github.io/obds-to-fhir/identifiers/prostata-gleason-patterns-observation-id",
+        "value": "OP_80105-modul-prostata-primary-gleason-pattern"
+      } ],
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "http://snomed.info/sct/900000000000207008/version/20250501",
+          "code": "384994009",
+          "display": "Primary Gleason pattern (observable entity)"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a3e7e744667c75cf4630a314ad6269ae5092efb1f22630ef79acda0b10a05668",
+        "identifier": {
+          "type": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "MR",
+              "display": "Medical record number"
+            } ]
+          },
+          "system": "https://bzkf.github.io/obds-to-fhir/identifiers/patient-id",
+          "value": "80-kein-ergebnis"
+        }
+      },
+      "focus": [ {
+        "reference": "Condition/f7e9ea3308d10280fd3d9ce1d3c573dae4f4348b15765237ee3bda760daa3fae"
+      } ],
+      "effectiveDateTime": "2020-06-01",
+      "valueCodeableConcept": {
+        "coding": [ {
+          "extension": [ {
+            "url": "http://hl7.org/fhir/StructureDefinition/ordinalValue",
+            "valueDecimal": 3
+          } ],
+          "system": "http://snomed.info/sct",
+          "version": "http://snomed.info/sct/900000000000207008/version/20250501",
+          "code": "369772003",
+          "display": "Gleason Pattern 3 (finding)"
+        } ]
+      },
+      "method": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "http://snomed.info/sct/900000000000207008/version/20250501",
+          "code": "65801008",
+          "display": "Excision (procedure)"
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Observation/aec5a3befd14187d50df28c3531d620f87435b4add98923a4850e5d4db4feeb4"
+    }
+  }, {
+    "fullUrl": "Observation/29879cb58ad631b654efb760c935f4ea4a4016043ce8295fedef192a24a40f76",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "29879cb58ad631b654efb760c935f4ea4a4016043ce8295fedef192a24a40f76",
+      "meta": {
+        "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-pr-onko-prostate-gleason-patterns|2026.0.0" ]
+      },
+      "identifier": [ {
+        "system": "https://bzkf.github.io/obds-to-fhir/identifiers/prostata-gleason-patterns-observation-id",
+        "value": "OP_80105-modul-prostata-secondary-gleason-pattern"
+      } ],
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "http://snomed.info/sct/900000000000207008/version/20250501",
+          "code": "384995005",
+          "display": "Secondary Gleason pattern (observable entity)"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/a3e7e744667c75cf4630a314ad6269ae5092efb1f22630ef79acda0b10a05668",
+        "identifier": {
+          "type": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "MR",
+              "display": "Medical record number"
+            } ]
+          },
+          "system": "https://bzkf.github.io/obds-to-fhir/identifiers/patient-id",
+          "value": "80-kein-ergebnis"
+        }
+      },
+      "focus": [ {
+        "reference": "Condition/f7e9ea3308d10280fd3d9ce1d3c573dae4f4348b15765237ee3bda760daa3fae"
+      } ],
+      "effectiveDateTime": "2020-06-01",
+      "valueCodeableConcept": {
+        "coding": [ {
+          "extension": [ {
+            "url": "http://hl7.org/fhir/StructureDefinition/ordinalValue",
+            "valueDecimal": 4
+          } ],
+          "system": "http://snomed.info/sct",
+          "version": "http://snomed.info/sct/900000000000207008/version/20250501",
+          "code": "369773008",
+          "display": "Gleason Pattern 4 (finding)"
+        } ]
+      },
+      "method": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "http://snomed.info/sct/900000000000207008/version/20250501",
+          "code": "65801008",
+          "display": "Excision (procedure)"
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Observation/29879cb58ad631b654efb760c935f4ea4a4016043ce8295fedef192a24a40f76"
+    }
+  } ]
+}
