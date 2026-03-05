@@ -37,7 +37,7 @@ fhir:
     mii-ex-onko-tnm-cp-praefix: "https://www.medizininformatik-initiative.de/fhir/ext/modul-onko/StructureDefinition/mii-ex-onko-tnm-cp-praefix${fhir.profiles.versions.mii-onkologie}"
   systems:
     identifiers:
-      base-url: "https://bzkf.github.io/obds-to-fhir/identifiers"
+      base-url: "http://ukgm.de/fhir//NameSpace/"
       patient-id: "${fhir.systems.identifiers.base-url}/patient-id"
       primaerdiagnose-condition-id: "${fhir.systems.identifiers.base-url}/primaerdiagnose-condition-id"
       histologie-specimen-id: "${fhir.systems.identifiers.base-url}/histologie-specimen-id"
