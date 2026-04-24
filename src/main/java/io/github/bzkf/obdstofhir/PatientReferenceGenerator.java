@@ -243,7 +243,8 @@ public class PatientReferenceGenerator {
                         Patient.IDENTIFIER
                             .exactly()
                             .systemAndIdentifier(
-                                patientIdentifier.getSystem(), patientIdentifier.getValue()))
+                                 patientIdentifier.getSystem(),
+                                 patientIdentifier.getValue()))
                     .execute());
 
     var patients =

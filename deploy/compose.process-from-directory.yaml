@@ -1,19 +1,31 @@
 services:
   obds-to-fhir:
     restart: "no"
-    user: "$(id -u):$(id -g kutob1)"
+    user: "${USER_ID:-65532}:${GROUP_ID:-65532}"
     environment:
       SPRING_PROFILES_ACTIVE: "mappings,process-from-directory"
-      FHIR_SYSTEMS_IDENTIFIERS_BASE_URL: "http:/ukgm.de/fhir/NameSpace/"
+      FHIR_SYSTEMS_IDENTIFIERS_BASE_URL: "http://ukgm.de/fhir/NameSpace"
+
+      # System Identifier Mapping 
+      FHIR_SYSTEMS_IDENTIFIERS_PATIENT_ID: "http://ukgm.de/fhir/NameSpace/Global/PatId/pseudonymized"
       FHIR_MAPPINGS_CREATE_PATIENT_RESOURCES_ENABLED: "false" # fhir.mappings.create-patient-resources.enabled=false
-      FHIR_MAPPINGS_PATIENT_REFERENCE_GENERATION_FHIR_SERVER_BASE_URL_AUTH_BASIC_ENABLED: "true" # fhir.mappings.patient-reference-generation.fhir-server.auth.basic.enabled=true
-      FHIR_MAPPINGS_PATIENT_REFERENCE_GENERATION_FHIR_SERVER_BASE_URL_AUTH_BASIC_USERNAME: ${ENV_USERNAME}
-      FHIR_MAPPINGS_PATIENT_REFERENCE_GENERATION_FHIR_SERVER_BASE_URL_AUTH_BASIC_PASSWORD: ${ENV_PASSWORD} 
+      FHIR_MAPPINGS_PATIENT_REFERENCE_GENERATION_FHIR_SERVER_AUTH_BASIC_ENABLED: "true" # fhir.mappings.patient-reference-generation.fhir-server.auth.basic.enabled=true
+      FHIR_MAPPINGS_PATIENT_REFERENCE_GENERATION_FHIR_SERVER_AUTH_BASIC_USERNAME: ${ENV_USERNAME}
+      FHIR_MAPPINGS_PATIENT_REFERENCE_GENERATION_FHIR_SERVER_AUTH_BASIC_PASSWORD: ${ENV_PASSWORD} 
       FHIR_MAPPINGS_PATIENT_REFERENCE_GENERATION_STRATEGY: "FHIR_SERVER_LOOKUP" # fhir.mappings.patient-reference-generation.strategy=FHIR_SERVER_LOOKUP
       FHIR_MAPPINGS_PATIENT_REFERENCE_GENERATION_FHIR_SERVER_BASE_URL: "https://dizfhir.med.uni-giessen.de/test/fhir" # fhir.mappings.patient-reference-generation.fhir-server.base-url=
+    # Observation Config 
+
+
+    # Condition 
+
+
+    # Procedures 
+
+    
     volumes:
       - type: bind
-        source: /home/blrom1/mirth/channelFiles/onko/input/resources/obds3
+        source: /home/blrom1/mirth/channelFiles/onko/input/
         target: /opt/obds-to-fhir/obds-input
         read_only: true
         bind:

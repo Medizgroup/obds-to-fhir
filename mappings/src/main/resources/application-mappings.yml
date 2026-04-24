@@ -38,7 +38,7 @@ fhir:
   systems:
     identifiers:
       base-url: "http://ukgm.de/fhir//NameSpace/"
-      patient-id: "${fhir.systems.identifiers.base-url}/patient-id"
+      patient-id: "${fhir.systems.identifiers.base-url}/patient-id" 
       primaerdiagnose-condition-id: "${fhir.systems.identifiers.base-url}/primaerdiagnose-condition-id"
       histologie-specimen-id: "${fhir.systems.identifiers.base-url}/histologie-specimen-id"
       studienteilnahme-observation-id: "${fhir.systems.identifiers.base-url}/studienteilnahme-observation-id"
