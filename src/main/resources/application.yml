@@ -238,6 +238,18 @@ obds:
       enabled: false
       # -- path to the directory to write Bundles to
       path: ""
+    on-error:
+      # -- If true, a file that fails to deserialize or map (e.g. due to a non-conformant or
+      # unmappable Meldung) is logged and skipped instead of aborting the entire directory run.
+      # The file is left fully unprocessed (all-or-nothing per file, since one file contains all
+      # Meldungen of a single patient) and, if `failed-directory` is set, moved there for review.
+      # We generally recommend against enabling this for routine operation - prefer fixing the
+      # individual Meldung or raising an issue so the mapping can be made more lenient - and to
+      # use this only to avoid a single bad file blocking an otherwise unattended batch run.
+      skip-invalid-messages: false
+      # -- directory to move files to that were skipped due to `skip-invalid-messages: true`.
+      # If unset, skipped files are just left in place in the input directory.
+      failed-directory: ""
   write-grouped-obds-to-kafka:
     # -- the oBDS Einzelmeldungen are internally combined to a single oBDS Export.
     # If enabled, write the combined oBDS exports to a topic: one message per Patient_ID+Tumor_ID

@@ -4,6 +4,10 @@ services:
     user: "${USER_ID:-65532}:${GROUP_ID:-65532}"
     environment:
       SPRING_PROFILES_ACTIVE: "mappings,process-from-directory"
+      # -- if true, a file with a non-conformant or unmappable Meldung is logged and skipped
+      # instead of aborting the whole directory run. See docs/config.md for details and caveats.
+      OBDS_PROCESS_FROM_DIRECTORY_ON_ERROR_SKIP_INVALID_MESSAGES: "${SKIP_INVALID_MESSAGES:-false}"
+      OBDS_PROCESS_FROM_DIRECTORY_ON_ERROR_FAILED_DIRECTORY: "/opt/obds-to-fhir/failed"
     volumes:
       - type: bind
         source: ${INPUT_DIRECTORY:?}
@@ -16,3 +20,8 @@ services:
         target: /opt/obds-to-fhir/fhir-output
         bind:
           create_host_path: false
+      - type: bind
+        source: ${FAILED_DIRECTORY:-./failed}
+        target: /opt/obds-to-fhir/failed
+        bind:
+          create_host_path: true

@@ -7,8 +7,11 @@ public record ProcessFromDirectoryConfig(
     boolean enabled,
     String path,
     OutputToDirectoryConfig outputToDirectory,
-    OutputToKafkaConfig outputToKafka) {
+    OutputToKafkaConfig outputToKafka,
+    OnErrorConfig onError) {
   public record OutputToDirectoryConfig(boolean enabled, String path) {}
 
   public record OutputToKafkaConfig(boolean enabled, String topic) {}
+
+  public record OnErrorConfig(boolean skipInvalidMessages, String failedDirectory) {}
 }
