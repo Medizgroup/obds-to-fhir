@@ -1,6 +1,7 @@
 services:
   obds-to-fhir:
-    image: ghcr.io/bzkf/obds-to-fhir:v3.0.0-beta.200
+    #image: ghcr.io/bzkf/obds-to-fhir:v3.0.0-beta.200
+    build: ../Dockerfile
     restart: "unless-stopped"
     cap_drop:
       - ALL
