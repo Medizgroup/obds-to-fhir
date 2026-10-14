@@ -87,7 +87,7 @@ public class ProcessFromDirectory {
                   + " this file because"
                   + " obds.process-from-directory.on-error.skip-invalid-messages is enabled.",
               e);
-          moveToFailedDirectory(file);
+          copyToFailedDirectory(file);
         }
       }
       MDC.clear();
@@ -146,7 +146,7 @@ public class ProcessFromDirectory {
     }
   }
 
-  private void moveToFailedDirectory(Path file) {
+  private void copyToFailedDirectory(Path file) {
     var failedDirectory = config.onError().failedDirectory();
     if (!StringUtils.hasText(failedDirectory)) {
       return;
@@ -155,10 +155,13 @@ public class ProcessFromDirectory {
     try {
       var targetDir = Path.of(failedDirectory);
       Files.createDirectories(targetDir);
-      Files.move(file, targetDir.resolve(file.getFileName()), StandardCopyOption.REPLACE_EXISTING);
-      LOG.info("Moved file to failed-directory {}", failedDirectory);
+      // Copy, not move: the input directory is typically mounted read-only, so we can't delete
+      // the source file after copying it (which Files.move would need to do, since it can't
+      // atomically rename across the different mounts of the input and failed directories).
+      Files.copy(file, targetDir.resolve(file.getFileName()), StandardCopyOption.REPLACE_EXISTING);
+      LOG.info("Copied file to failed-directory {}", failedDirectory);
     } catch (IOException e) {
-      LOG.error("Failed to move file to the configured failed-directory {}", failedDirectory, e);
+      LOG.error("Failed to copy file to the configured failed-directory {}", failedDirectory, e);
     }
   }
 }

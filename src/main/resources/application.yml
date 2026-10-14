@@ -242,7 +242,7 @@ obds:
       # -- If true, a file that fails to deserialize or map (e.g. due to a non-conformant or
       # unmappable Meldung) is logged and skipped instead of aborting the entire directory run.
       # The file is left fully unprocessed (all-or-nothing per file, since one file contains all
-      # Meldungen of a single patient) and, if `failed-directory` is set, moved there for review.
+      # Meldungen of a single patient) and, if `failed-directory` is set, copied there for review (the source file is left untouched, since the input directory is typically mounted read-only).
       # We generally recommend against enabling this for routine operation - prefer fixing the
       # individual Meldung or raising an issue so the mapping can be made more lenient - and to
       # use this only to avoid a single bad file blocking an otherwise unattended batch run.
