@@ -1,6 +1,9 @@
 services:
   obds-to-fhir:
     image: ghcr.io/bzkf/obds-to-fhir:v3.6.1
+    build:
+      context: ..
+      dockerfile: Dockerfile
     restart: "unless-stopped"
     cap_drop:
       - ALL
@@ -19,9 +22,6 @@ services:
     depends_on:
       kafka:
         condition: service_started
-    env_file:
-      - path: .obds-to-fhir.env
-        required: false
 
   kafka:
     image: docker.io/apache/kafka:4.3.0@sha256:0be4c9eb3565733612d2836d65636fd611a219ebcf5b4162e5ac259ea0ecb907
