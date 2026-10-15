@@ -1,0 +1,14 @@
+# Only for local development/testing on a machine with full internet access.
+# NEVER use this on the air-gapped Routine-Netz VM - it would try to pull build-time
+# base images (docker.io/library/gradle, gcr.io/distroless/...) that aren't reachable
+# there, failing with an authentication/resolve error instead of just using the
+# already docker-load'ed image.
+#
+# Usage (local only):
+#   docker compose -f compose.yaml -f compose.process-from-directory.yaml \
+#     -f compose.local-build.yaml build obds-to-fhir
+services:
+  obds-to-fhir:
+    build:
+      context: ..
+      dockerfile: Dockerfile
